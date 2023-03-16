@@ -9,6 +9,7 @@ module SwitchCoilBracket(
     w2 = 15,
     l  = 35,
     l1 = 8,
+    l2 = 20 + 4,
     h  = 10,
     h1 = 2,
     d1 = 10,
@@ -17,7 +18,8 @@ module SwitchCoilBracket(
     b  =  5,
     c  =  3.0,
     d  =  2.0,
-    e  =  2.0
+    e  =  2.0,
+    f  =  1.0
 ) {
     difference() {
         Base();
@@ -60,7 +62,9 @@ module SwitchCoilBracket(
                             w2 - 4 * nozzle,
                             2
                         ], true);
-                        circle(d=d1);
+                        translate([0, f]) {
+                            circle(d=d1);
+                        }
                     }
                 }
             }
@@ -92,7 +96,7 @@ module SwitchCoilBracket(
         module t() {
             mirror_copy([0, 1]) {
                 translate([
-                    w1 / 2 + a,
+                    l2 / 2,
                     b / 2 
                 ]) {
                     children();
