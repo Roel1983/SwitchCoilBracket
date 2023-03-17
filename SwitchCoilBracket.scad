@@ -5,8 +5,8 @@ BIAS   = 0.1;
 SwitchCoilBracket();
 
 module SwitchCoilBracket(
-    w1 = 10,
-    w2 = 15,
+    w1 = 9,
+    w2 = 16,
     l  = 35,
     l1 = 8,
     l2 = 20 + 4,
@@ -15,11 +15,11 @@ module SwitchCoilBracket(
     h2 = 1,
     d1 = 10,
     d2 =  4,
-    d3 =  8.5,
-    a  =  4,
+    d3 =  9.5,
+    a  =  5,
     b  =  5,
-    c  =  3.0,
-    d  =  2.0,
+    c  =  3.5,
+    d  =  3.0,
     e  =  2.0,
     f  =  1.0
 ) {
