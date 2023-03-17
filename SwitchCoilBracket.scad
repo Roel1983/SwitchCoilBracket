@@ -12,8 +12,10 @@ module SwitchCoilBracket(
     l2 = 20 + 4,
     h  = 10,
     h1 = 2,
+    h2 = 1,
     d1 = 10,
     d2 =  4,
+    d3 =  8.5,
     a  =  4,
     b  =  5,
     c  =  3.0,
@@ -72,7 +74,7 @@ module SwitchCoilBracket(
     }
     module Foot() {
         difference() {
-            linear_extrude(h1) {
+            linear_extrude(h1, convexity=2) {
                 difference() {
                     hull() {
                         square([
@@ -90,7 +92,13 @@ module SwitchCoilBracket(
                     }
                 }
             }
-            
+            translate([0, 0, h2]) linear_extrude(h1) {
+                mirror_copy([1, 0]) {
+                    hull() {
+                        t() circle(d= d3);
+                    }
+                }
+            } 
         }
         
         module t() {
