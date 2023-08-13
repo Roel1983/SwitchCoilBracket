@@ -3,6 +3,9 @@ nozzle = 0.4;
 BIAS   = 0.1;
 
 SwitchCoilBracket();
+if($preview) {
+    %Coil();
+}
 
 module SwitchCoilBracket(
     w1 = 9,
@@ -10,9 +13,9 @@ module SwitchCoilBracket(
     l  = 35,
     l1 = 8,
     l2 = 20 + 4,
-    h  = 10,
-    h1 = 2,
-    h2 = 1,
+    h  = 12,
+    h1 = 2.5,
+    h2 = 1.5,
     d1 = 10,
     d2 =  4,
     d3 =  9.5,
@@ -130,6 +133,11 @@ module SwitchCoilBracket(
             }
         }
     }
+}
+
+
+module Coil(h=17) {
+    translate([0,0,h]) rotate(90, [1,0,0]) cylinder(d=17, h=48, center=true);
 }
 
 module mirror_copy(vec) {
